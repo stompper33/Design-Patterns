@@ -1,0 +1,21 @@
+package com.andrew.designpatterns;
+
+import java.sql.Connection;
+
+/**
+ * 
+ * @author andrewcalderon
+ *  @Returns a database connection for a specified data source
+ *          a Factory method that creates a connection object
+ */
+public class DBHelper {
+
+	public static Connection getConnection(final String username, final String password, final String connectionString )
+	{
+		System.out.println("DBHelper: ------- Driver for JDBC Connection ----");
+		
+		
+		
+		return null;
+	}
+}

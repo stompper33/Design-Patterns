@@ -1,0 +1,21 @@
+package com.andrew.designpatterns;
+
+public class BuilderPattern {
+
+	public static void main(String[] args)
+	{
+		
+	}
+}
+
+class Person
+{
+	String fname;
+	String lname;
+	String mname;
+	int age;
+	String occupation;
+	String address;
+	boolean isEmployed;
+	String gender;
+}

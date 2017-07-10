@@ -1,0 +1,59 @@
+package com.andrew.designpatterns;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+/**
+ * 
+ * @author andrewcalderon
+ *  @Returns a database connection for a specified data source
+ *          a Factory method that creates a connection object
+ */
+public class DBHelper {
+
+	public static Connection getConnection(final String username, final String password, final String connectionString )
+	{
+		System.out.println("DBHelper: ------- Checking for Driver for JDBC Connection ----");
+		
+		
+		//check for driver
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+		}
+		catch(ClassNotFoundException e)
+		{
+			System.out.println("DBHelper: --- JDBC Driver Missing From Classpath!");
+			e.printStackTrace();
+		}
+		
+		System.out.println("DBHelper: ------- Driver for JDBC Connection Registered SUCCESSFULLY! ----");
+		
+		Connection conn = null;
+		
+		try{
+			conn = DriverManager.getConnection(connectionString,username,password);
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery("SELECT VERSION()");
+			
+			if(rs.next())
+			{
+				System.out.println("DBHelper: ------- Database Version is " + rs.getString(1));
+			}
+		} catch(SQLException e){
+			System.out.println("DBHelper: ------- Connection FAILED!");
+			e.printStackTrace();
+		}
+		
+		if(conn != null){
+			System.out.println("DBHelper: ------- SUCCESSFULLY made database connectin!");
+		}
+		else{
+			System.out.println("DBHelper: ------- FAILED to make database connection");
+		}
+		
+		return conn;
+	}
+}

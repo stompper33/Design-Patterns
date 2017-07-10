@@ -1,0 +1,73 @@
+package com.andrew.designpatterns;
+
+public class BuilderPattern {
+
+	public static void main(String[] args)
+	{
+		
+	}
+}
+
+class Person
+{
+	String fname;
+	String lname;
+	String mname;
+	int age;
+	String occupation;
+	String address;
+	boolean isEmployed;
+	String gender;
+	
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getOccupation() {
+		return occupation;
+	}
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public boolean isEmployed() {
+		return isEmployed;
+	}
+	public void setEmployed(boolean isEmployed) {
+		this.isEmployed = isEmployed;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	
+}
+

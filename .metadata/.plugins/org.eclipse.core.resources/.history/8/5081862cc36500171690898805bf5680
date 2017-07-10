@@ -1,0 +1,55 @@
+package com.andrew.designpatterns;
+
+public class FactoryPattern 
+{
+
+}
+
+class ShapeFactory
+{
+	public static Shape getShape(String type)
+	{
+		if(type.equalsIgnoreCase("CIRCLE"))
+		{
+			return new Circle();
+		}
+		else if(type.equalsIgnoreCase("RECTANGLE"))
+		{
+			return new Rectangle();
+		}
+		else if(type.equalsIgnoreCase("TRIANGLE"))
+		{
+			return new Triangle();
+		}
+	}
+}
+
+interface Shape
+{
+	void draw();
+}
+
+class Rectangle implements Shape
+{
+	@Override
+	public void draw() {
+		System.out.println("Drawing RECTANGLE");
+	}
+}
+
+class Circle implements Shape
+{
+	@Override
+	public void draw() {
+		System.out.println("Drawing CIRCLE");
+	}	
+}
+
+class Triangle implements Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Drawing TRIANGLE");
+	}
+}

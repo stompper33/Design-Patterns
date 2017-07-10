@@ -1,0 +1,22 @@
+package com.andrew.designpatterns;
+
+public class FactoryPattern 
+{
+
+}
+
+
+interface Shape
+{
+	void draw();
+}
+
+class Rectangele implements Shape
+{
+
+	@Override
+	public void draw() {
+		System.out.println("Drawing RECTANGLE");
+	}
+	
+}
